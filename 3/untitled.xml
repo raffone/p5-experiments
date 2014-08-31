@@ -1,0 +1,1283 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<scheme>
+    <color space="0">
+        <component>0.895723</component>
+        <component>0.307450</component>
+        <component>0.233965</component>
+    </color>
+    <color space="0">
+        <component>0.894563</component>
+        <component>0.306245</component>
+        <component>0.236969</component>
+    </color>
+    <color space="0">
+        <component>0.893403</component>
+        <component>0.305039</component>
+        <component>0.239973</component>
+    </color>
+    <color space="0">
+        <component>0.892243</component>
+        <component>0.303833</component>
+        <component>0.242977</component>
+    </color>
+    <color space="0">
+        <component>0.891084</component>
+        <component>0.302628</component>
+        <component>0.245982</component>
+    </color>
+    <color space="0">
+        <component>0.889924</component>
+        <component>0.301422</component>
+        <component>0.248986</component>
+    </color>
+    <color space="0">
+        <component>0.888764</component>
+        <component>0.300216</component>
+        <component>0.251990</component>
+    </color>
+    <color space="0">
+        <component>0.887605</component>
+        <component>0.299011</component>
+        <component>0.254994</component>
+    </color>
+    <color space="0">
+        <component>0.886445</component>
+        <component>0.297805</component>
+        <component>0.257998</component>
+    </color>
+    <color space="0">
+        <component>0.885285</component>
+        <component>0.296599</component>
+        <component>0.261002</component>
+    </color>
+    <color space="0">
+        <component>0.884126</component>
+        <component>0.295393</component>
+        <component>0.264006</component>
+    </color>
+    <color space="0">
+        <component>0.882966</component>
+        <component>0.294188</component>
+        <component>0.267010</component>
+    </color>
+    <color space="0">
+        <component>0.881806</component>
+        <component>0.292982</component>
+        <component>0.270014</component>
+    </color>
+    <color space="0">
+        <component>0.880646</component>
+        <component>0.291776</component>
+        <component>0.273018</component>
+    </color>
+    <color space="0">
+        <component>0.879487</component>
+        <component>0.290571</component>
+        <component>0.276022</component>
+    </color>
+    <color space="0">
+        <component>0.878327</component>
+        <component>0.289365</component>
+        <component>0.279026</component>
+    </color>
+    <color space="0">
+        <component>0.877167</component>
+        <component>0.288159</component>
+        <component>0.282030</component>
+    </color>
+    <color space="0">
+        <component>0.876008</component>
+        <component>0.286954</component>
+        <component>0.285034</component>
+    </color>
+    <color space="0">
+        <component>0.874848</component>
+        <component>0.285748</component>
+        <component>0.288038</component>
+    </color>
+    <color space="0">
+        <component>0.873688</component>
+        <component>0.284542</component>
+        <component>0.291042</component>
+    </color>
+    <color space="0">
+        <component>0.872529</component>
+        <component>0.283337</component>
+        <component>0.294046</component>
+    </color>
+    <color space="0">
+        <component>0.871369</component>
+        <component>0.282131</component>
+        <component>0.297050</component>
+    </color>
+    <color space="0">
+        <component>0.870209</component>
+        <component>0.280925</component>
+        <component>0.300055</component>
+    </color>
+    <color space="0">
+        <component>0.869049</component>
+        <component>0.279720</component>
+        <component>0.303059</component>
+    </color>
+    <color space="0">
+        <component>0.867890</component>
+        <component>0.278514</component>
+        <component>0.306063</component>
+    </color>
+    <color space="0">
+        <component>0.866730</component>
+        <component>0.277308</component>
+        <component>0.309067</component>
+    </color>
+    <color space="0">
+        <component>0.865570</component>
+        <component>0.276103</component>
+        <component>0.312071</component>
+    </color>
+    <color space="0">
+        <component>0.864411</component>
+        <component>0.274897</component>
+        <component>0.315075</component>
+    </color>
+    <color space="0">
+        <component>0.863251</component>
+        <component>0.273691</component>
+        <component>0.318079</component>
+    </color>
+    <color space="0">
+        <component>0.862091</component>
+        <component>0.272485</component>
+        <component>0.321083</component>
+    </color>
+    <color space="0">
+        <component>0.860932</component>
+        <component>0.271280</component>
+        <component>0.324087</component>
+    </color>
+    <color space="0">
+        <component>0.859772</component>
+        <component>0.270074</component>
+        <component>0.327091</component>
+    </color>
+    <color space="0">
+        <component>0.858612</component>
+        <component>0.268868</component>
+        <component>0.330095</component>
+    </color>
+    <color space="0">
+        <component>0.857453</component>
+        <component>0.267663</component>
+        <component>0.333099</component>
+    </color>
+    <color space="0">
+        <component>0.856293</component>
+        <component>0.266457</component>
+        <component>0.336103</component>
+    </color>
+    <color space="0">
+        <component>0.855133</component>
+        <component>0.265251</component>
+        <component>0.339107</component>
+    </color>
+    <color space="0">
+        <component>0.853973</component>
+        <component>0.264046</component>
+        <component>0.342111</component>
+    </color>
+    <color space="0">
+        <component>0.852814</component>
+        <component>0.262840</component>
+        <component>0.345115</component>
+    </color>
+    <color space="0">
+        <component>0.851654</component>
+        <component>0.261634</component>
+        <component>0.348119</component>
+    </color>
+    <color space="0">
+        <component>0.850494</component>
+        <component>0.260429</component>
+        <component>0.351124</component>
+    </color>
+    <color space="0">
+        <component>0.849335</component>
+        <component>0.259223</component>
+        <component>0.354128</component>
+    </color>
+    <color space="0">
+        <component>0.848175</component>
+        <component>0.258017</component>
+        <component>0.357132</component>
+    </color>
+    <color space="0">
+        <component>0.847015</component>
+        <component>0.256811</component>
+        <component>0.360136</component>
+    </color>
+    <color space="0">
+        <component>0.845856</component>
+        <component>0.255606</component>
+        <component>0.363140</component>
+    </color>
+    <color space="0">
+        <component>0.844696</component>
+        <component>0.254400</component>
+        <component>0.366144</component>
+    </color>
+    <color space="0">
+        <component>0.843536</component>
+        <component>0.253194</component>
+        <component>0.369148</component>
+    </color>
+    <color space="0">
+        <component>0.842376</component>
+        <component>0.251989</component>
+        <component>0.372152</component>
+    </color>
+    <color space="0">
+        <component>0.841217</component>
+        <component>0.250783</component>
+        <component>0.375156</component>
+    </color>
+    <color space="0">
+        <component>0.840057</component>
+        <component>0.249577</component>
+        <component>0.378160</component>
+    </color>
+    <color space="0">
+        <component>0.838897</component>
+        <component>0.248372</component>
+        <component>0.381164</component>
+    </color>
+    <color space="0">
+        <component>0.837738</component>
+        <component>0.247166</component>
+        <component>0.384168</component>
+    </color>
+    <color space="0">
+        <component>0.836578</component>
+        <component>0.245960</component>
+        <component>0.387172</component>
+    </color>
+    <color space="0">
+        <component>0.835418</component>
+        <component>0.244755</component>
+        <component>0.390176</component>
+    </color>
+    <color space="0">
+        <component>0.834259</component>
+        <component>0.243549</component>
+        <component>0.393180</component>
+    </color>
+    <color space="0">
+        <component>0.833099</component>
+        <component>0.242343</component>
+        <component>0.396184</component>
+    </color>
+    <color space="0">
+        <component>0.831939</component>
+        <component>0.241138</component>
+        <component>0.399188</component>
+    </color>
+    <color space="0">
+        <component>0.830780</component>
+        <component>0.239932</component>
+        <component>0.402193</component>
+    </color>
+    <color space="0">
+        <component>0.829620</component>
+        <component>0.238726</component>
+        <component>0.405197</component>
+    </color>
+    <color space="0">
+        <component>0.828460</component>
+        <component>0.237520</component>
+        <component>0.408201</component>
+    </color>
+    <color space="0">
+        <component>0.827300</component>
+        <component>0.236315</component>
+        <component>0.411205</component>
+    </color>
+    <color space="0">
+        <component>0.826141</component>
+        <component>0.235109</component>
+        <component>0.414209</component>
+    </color>
+    <color space="0">
+        <component>0.824981</component>
+        <component>0.233903</component>
+        <component>0.417213</component>
+    </color>
+    <color space="0">
+        <component>0.823821</component>
+        <component>0.232698</component>
+        <component>0.420217</component>
+    </color>
+    <color space="0">
+        <component>0.822662</component>
+        <component>0.231492</component>
+        <component>0.423221</component>
+    </color>
+    <color space="0">
+        <component>0.821502</component>
+        <component>0.230286</component>
+        <component>0.426225</component>
+    </color>
+    <color space="0">
+        <component>0.820342</component>
+        <component>0.229081</component>
+        <component>0.429229</component>
+    </color>
+    <color space="0">
+        <component>0.819183</component>
+        <component>0.227875</component>
+        <component>0.432233</component>
+    </color>
+    <color space="0">
+        <component>0.818023</component>
+        <component>0.226669</component>
+        <component>0.435237</component>
+    </color>
+    <color space="0">
+        <component>0.816863</component>
+        <component>0.225464</component>
+        <component>0.438241</component>
+    </color>
+    <color space="0">
+        <component>0.815704</component>
+        <component>0.224258</component>
+        <component>0.441245</component>
+    </color>
+    <color space="0">
+        <component>0.814544</component>
+        <component>0.223052</component>
+        <component>0.444249</component>
+    </color>
+    <color space="0">
+        <component>0.813384</component>
+        <component>0.221847</component>
+        <component>0.447253</component>
+    </color>
+    <color space="0">
+        <component>0.812224</component>
+        <component>0.220641</component>
+        <component>0.450257</component>
+    </color>
+    <color space="0">
+        <component>0.811065</component>
+        <component>0.219435</component>
+        <component>0.453261</component>
+    </color>
+    <color space="0">
+        <component>0.809905</component>
+        <component>0.218229</component>
+        <component>0.456266</component>
+    </color>
+    <color space="0">
+        <component>0.808745</component>
+        <component>0.217024</component>
+        <component>0.459270</component>
+    </color>
+    <color space="0">
+        <component>0.807586</component>
+        <component>0.215818</component>
+        <component>0.462274</component>
+    </color>
+    <color space="0">
+        <component>0.806426</component>
+        <component>0.214612</component>
+        <component>0.465278</component>
+    </color>
+    <color space="0">
+        <component>0.805266</component>
+        <component>0.213407</component>
+        <component>0.468282</component>
+    </color>
+    <color space="0">
+        <component>0.804107</component>
+        <component>0.212201</component>
+        <component>0.471286</component>
+    </color>
+    <color space="0">
+        <component>0.802947</component>
+        <component>0.210995</component>
+        <component>0.474290</component>
+    </color>
+    <color space="0">
+        <component>0.801787</component>
+        <component>0.209790</component>
+        <component>0.477294</component>
+    </color>
+    <color space="0">
+        <component>0.800627</component>
+        <component>0.208584</component>
+        <component>0.480298</component>
+    </color>
+    <color space="0">
+        <component>0.799468</component>
+        <component>0.207378</component>
+        <component>0.483302</component>
+    </color>
+    <color space="0">
+        <component>0.798308</component>
+        <component>0.206173</component>
+        <component>0.486306</component>
+    </color>
+    <color space="0">
+        <component>0.797148</component>
+        <component>0.204967</component>
+        <component>0.489310</component>
+    </color>
+    <color space="0">
+        <component>0.795989</component>
+        <component>0.203761</component>
+        <component>0.492314</component>
+    </color>
+    <color space="0">
+        <component>0.794829</component>
+        <component>0.202556</component>
+        <component>0.495318</component>
+    </color>
+    <color space="0">
+        <component>0.793669</component>
+        <component>0.201350</component>
+        <component>0.498322</component>
+    </color>
+    <color space="0">
+        <component>0.792510</component>
+        <component>0.200144</component>
+        <component>0.501326</component>
+    </color>
+    <color space="0">
+        <component>0.791350</component>
+        <component>0.198938</component>
+        <component>0.504331</component>
+    </color>
+    <color space="0">
+        <component>0.790190</component>
+        <component>0.197733</component>
+        <component>0.507335</component>
+    </color>
+    <color space="0">
+        <component>0.789030</component>
+        <component>0.196527</component>
+        <component>0.510339</component>
+    </color>
+    <color space="0">
+        <component>0.787871</component>
+        <component>0.195321</component>
+        <component>0.513343</component>
+    </color>
+    <color space="0">
+        <component>0.786711</component>
+        <component>0.194116</component>
+        <component>0.516347</component>
+    </color>
+    <color space="0">
+        <component>0.785551</component>
+        <component>0.192910</component>
+        <component>0.519351</component>
+    </color>
+    <color space="0">
+        <component>0.784392</component>
+        <component>0.191704</component>
+        <component>0.522355</component>
+    </color>
+    <color space="0">
+        <component>0.783232</component>
+        <component>0.190499</component>
+        <component>0.525359</component>
+    </color>
+    <color space="0">
+        <component>0.782072</component>
+        <component>0.189293</component>
+        <component>0.528363</component>
+    </color>
+    <color space="0">
+        <component>0.780913</component>
+        <component>0.188087</component>
+        <component>0.531367</component>
+    </color>
+    <color space="0">
+        <component>0.779753</component>
+        <component>0.186882</component>
+        <component>0.534371</component>
+    </color>
+    <color space="0">
+        <component>0.778593</component>
+        <component>0.185676</component>
+        <component>0.537375</component>
+    </color>
+    <color space="0">
+        <component>0.777434</component>
+        <component>0.184470</component>
+        <component>0.540379</component>
+    </color>
+    <color space="0">
+        <component>0.776274</component>
+        <component>0.183265</component>
+        <component>0.543383</component>
+    </color>
+    <color space="0">
+        <component>0.775114</component>
+        <component>0.182059</component>
+        <component>0.546387</component>
+    </color>
+    <color space="0">
+        <component>0.773954</component>
+        <component>0.180853</component>
+        <component>0.549391</component>
+    </color>
+    <color space="0">
+        <component>0.772795</component>
+        <component>0.179647</component>
+        <component>0.552395</component>
+    </color>
+    <color space="0">
+        <component>0.771635</component>
+        <component>0.178442</component>
+        <component>0.555399</component>
+    </color>
+    <color space="0">
+        <component>0.770475</component>
+        <component>0.177236</component>
+        <component>0.558403</component>
+    </color>
+    <color space="0">
+        <component>0.769316</component>
+        <component>0.176030</component>
+        <component>0.561408</component>
+    </color>
+    <color space="0">
+        <component>0.768156</component>
+        <component>0.174825</component>
+        <component>0.564412</component>
+    </color>
+    <color space="0">
+        <component>0.766996</component>
+        <component>0.173619</component>
+        <component>0.567416</component>
+    </color>
+    <color space="0">
+        <component>0.765837</component>
+        <component>0.172413</component>
+        <component>0.570420</component>
+    </color>
+    <color space="0">
+        <component>0.764677</component>
+        <component>0.171208</component>
+        <component>0.573424</component>
+    </color>
+    <color space="0">
+        <component>0.763517</component>
+        <component>0.170002</component>
+        <component>0.576428</component>
+    </color>
+    <color space="0">
+        <component>0.762357</component>
+        <component>0.168796</component>
+        <component>0.579432</component>
+    </color>
+    <color space="0">
+        <component>0.761198</component>
+        <component>0.167591</component>
+        <component>0.582436</component>
+    </color>
+    <color space="0">
+        <component>0.760038</component>
+        <component>0.166385</component>
+        <component>0.585440</component>
+    </color>
+    <color space="0">
+        <component>0.758878</component>
+        <component>0.165179</component>
+        <component>0.588444</component>
+    </color>
+    <color space="0">
+        <component>0.757719</component>
+        <component>0.163974</component>
+        <component>0.591448</component>
+    </color>
+    <color space="0">
+        <component>0.756559</component>
+        <component>0.162768</component>
+        <component>0.594452</component>
+    </color>
+    <color space="0">
+        <component>0.755399</component>
+        <component>0.161562</component>
+        <component>0.597456</component>
+    </color>
+    <color space="0">
+        <component>0.754240</component>
+        <component>0.160356</component>
+        <component>0.600460</component>
+    </color>
+    <color space="0">
+        <component>0.753080</component>
+        <component>0.159151</component>
+        <component>0.603464</component>
+    </color>
+    <color space="0">
+        <component>0.751920</component>
+        <component>0.157945</component>
+        <component>0.606468</component>
+    </color>
+    <color space="0">
+        <component>0.750760</component>
+        <component>0.156739</component>
+        <component>0.609473</component>
+    </color>
+    <color space="0">
+        <component>0.749601</component>
+        <component>0.155534</component>
+        <component>0.612477</component>
+    </color>
+    <color space="0">
+        <component>0.748441</component>
+        <component>0.154328</component>
+        <component>0.615481</component>
+    </color>
+    <color space="0">
+        <component>0.747281</component>
+        <component>0.153122</component>
+        <component>0.618485</component>
+    </color>
+    <color space="0">
+        <component>0.746122</component>
+        <component>0.151917</component>
+        <component>0.621489</component>
+    </color>
+    <color space="0">
+        <component>0.744962</component>
+        <component>0.150711</component>
+        <component>0.624493</component>
+    </color>
+    <color space="0">
+        <component>0.743802</component>
+        <component>0.149505</component>
+        <component>0.627497</component>
+    </color>
+    <color space="0">
+        <component>0.742643</component>
+        <component>0.148300</component>
+        <component>0.630501</component>
+    </color>
+    <color space="0">
+        <component>0.741483</component>
+        <component>0.147094</component>
+        <component>0.633505</component>
+    </color>
+    <color space="0">
+        <component>0.740323</component>
+        <component>0.145888</component>
+        <component>0.636509</component>
+    </color>
+    <color space="0">
+        <component>0.739164</component>
+        <component>0.144683</component>
+        <component>0.639513</component>
+    </color>
+    <color space="0">
+        <component>0.738004</component>
+        <component>0.143477</component>
+        <component>0.642517</component>
+    </color>
+    <color space="0">
+        <component>0.736844</component>
+        <component>0.142271</component>
+        <component>0.645521</component>
+    </color>
+    <color space="0">
+        <component>0.735684</component>
+        <component>0.141065</component>
+        <component>0.648525</component>
+    </color>
+    <color space="0">
+        <component>0.734525</component>
+        <component>0.139860</component>
+        <component>0.651529</component>
+    </color>
+    <color space="0">
+        <component>0.733365</component>
+        <component>0.138654</component>
+        <component>0.654533</component>
+    </color>
+    <color space="0">
+        <component>0.732205</component>
+        <component>0.137448</component>
+        <component>0.657537</component>
+    </color>
+    <color space="0">
+        <component>0.731046</component>
+        <component>0.136243</component>
+        <component>0.660541</component>
+    </color>
+    <color space="0">
+        <component>0.729886</component>
+        <component>0.135037</component>
+        <component>0.663546</component>
+    </color>
+    <color space="0">
+        <component>0.728726</component>
+        <component>0.133831</component>
+        <component>0.666550</component>
+    </color>
+    <color space="0">
+        <component>0.727567</component>
+        <component>0.132626</component>
+        <component>0.669554</component>
+    </color>
+    <color space="0">
+        <component>0.726407</component>
+        <component>0.131420</component>
+        <component>0.672558</component>
+    </color>
+    <color space="0">
+        <component>0.725247</component>
+        <component>0.130214</component>
+        <component>0.675562</component>
+    </color>
+    <color space="0">
+        <component>0.724087</component>
+        <component>0.129009</component>
+        <component>0.678566</component>
+    </color>
+    <color space="0">
+        <component>0.722928</component>
+        <component>0.127803</component>
+        <component>0.681570</component>
+    </color>
+    <color space="0">
+        <component>0.721768</component>
+        <component>0.126597</component>
+        <component>0.684574</component>
+    </color>
+    <color space="0">
+        <component>0.720608</component>
+        <component>0.125392</component>
+        <component>0.687578</component>
+    </color>
+    <color space="0">
+        <component>0.719449</component>
+        <component>0.124186</component>
+        <component>0.690582</component>
+    </color>
+    <color space="0">
+        <component>0.718289</component>
+        <component>0.122980</component>
+        <component>0.693586</component>
+    </color>
+    <color space="0">
+        <component>0.717129</component>
+        <component>0.121774</component>
+        <component>0.696590</component>
+    </color>
+    <color space="0">
+        <component>0.715970</component>
+        <component>0.120569</component>
+        <component>0.699594</component>
+    </color>
+    <color space="0">
+        <component>0.714810</component>
+        <component>0.119363</component>
+        <component>0.702598</component>
+    </color>
+    <color space="0">
+        <component>0.713650</component>
+        <component>0.118157</component>
+        <component>0.705602</component>
+    </color>
+    <color space="0">
+        <component>0.712491</component>
+        <component>0.116952</component>
+        <component>0.708606</component>
+    </color>
+    <color space="0">
+        <component>0.711331</component>
+        <component>0.115746</component>
+        <component>0.711610</component>
+    </color>
+    <color space="0">
+        <component>0.710171</component>
+        <component>0.114540</component>
+        <component>0.714615</component>
+    </color>
+    <color space="0">
+        <component>0.709011</component>
+        <component>0.113335</component>
+        <component>0.717619</component>
+    </color>
+    <color space="0">
+        <component>0.707852</component>
+        <component>0.112129</component>
+        <component>0.720623</component>
+    </color>
+    <color space="0">
+        <component>0.706692</component>
+        <component>0.110923</component>
+        <component>0.723627</component>
+    </color>
+    <color space="0">
+        <component>0.705532</component>
+        <component>0.109718</component>
+        <component>0.726631</component>
+    </color>
+    <color space="0">
+        <component>0.704373</component>
+        <component>0.108512</component>
+        <component>0.729635</component>
+    </color>
+    <color space="0">
+        <component>0.703213</component>
+        <component>0.107306</component>
+        <component>0.732639</component>
+    </color>
+    <color space="0">
+        <component>0.702053</component>
+        <component>0.106101</component>
+        <component>0.735643</component>
+    </color>
+    <color space="0">
+        <component>0.700894</component>
+        <component>0.104895</component>
+        <component>0.738647</component>
+    </color>
+    <color space="0">
+        <component>0.699734</component>
+        <component>0.103689</component>
+        <component>0.741651</component>
+    </color>
+    <color space="0">
+        <component>0.698574</component>
+        <component>0.102483</component>
+        <component>0.744655</component>
+    </color>
+    <color space="0">
+        <component>0.697415</component>
+        <component>0.101278</component>
+        <component>0.747659</component>
+    </color>
+    <color space="0">
+        <component>0.696255</component>
+        <component>0.100072</component>
+        <component>0.750663</component>
+    </color>
+    <color space="0">
+        <component>0.695095</component>
+        <component>0.098866</component>
+        <component>0.753667</component>
+    </color>
+    <color space="0">
+        <component>0.693935</component>
+        <component>0.097661</component>
+        <component>0.756671</component>
+    </color>
+    <color space="0">
+        <component>0.692776</component>
+        <component>0.096455</component>
+        <component>0.759675</component>
+    </color>
+    <color space="0">
+        <component>0.691616</component>
+        <component>0.095249</component>
+        <component>0.762679</component>
+    </color>
+    <color space="0">
+        <component>0.690456</component>
+        <component>0.094044</component>
+        <component>0.765684</component>
+    </color>
+    <color space="0">
+        <component>0.689297</component>
+        <component>0.092838</component>
+        <component>0.768688</component>
+    </color>
+    <color space="0">
+        <component>0.688137</component>
+        <component>0.091632</component>
+        <component>0.771692</component>
+    </color>
+    <color space="0">
+        <component>0.686977</component>
+        <component>0.090427</component>
+        <component>0.774696</component>
+    </color>
+    <color space="0">
+        <component>0.685818</component>
+        <component>0.089221</component>
+        <component>0.777700</component>
+    </color>
+    <color space="0">
+        <component>0.684658</component>
+        <component>0.088015</component>
+        <component>0.780704</component>
+    </color>
+    <color space="0">
+        <component>0.683498</component>
+        <component>0.086810</component>
+        <component>0.783708</component>
+    </color>
+    <color space="0">
+        <component>0.682338</component>
+        <component>0.085604</component>
+        <component>0.786712</component>
+    </color>
+    <color space="0">
+        <component>0.681179</component>
+        <component>0.084398</component>
+        <component>0.789716</component>
+    </color>
+    <color space="0">
+        <component>0.680019</component>
+        <component>0.083192</component>
+        <component>0.792720</component>
+    </color>
+    <color space="0">
+        <component>0.678859</component>
+        <component>0.081987</component>
+        <component>0.795724</component>
+    </color>
+    <color space="0">
+        <component>0.677700</component>
+        <component>0.080781</component>
+        <component>0.798728</component>
+    </color>
+    <color space="0">
+        <component>0.676540</component>
+        <component>0.079575</component>
+        <component>0.801732</component>
+    </color>
+    <color space="0">
+        <component>0.675380</component>
+        <component>0.078370</component>
+        <component>0.804736</component>
+    </color>
+    <color space="0">
+        <component>0.674221</component>
+        <component>0.077164</component>
+        <component>0.807740</component>
+    </color>
+    <color space="0">
+        <component>0.673061</component>
+        <component>0.075958</component>
+        <component>0.810744</component>
+    </color>
+    <color space="0">
+        <component>0.671901</component>
+        <component>0.074753</component>
+        <component>0.813748</component>
+    </color>
+    <color space="0">
+        <component>0.670741</component>
+        <component>0.073547</component>
+        <component>0.816752</component>
+    </color>
+    <color space="0">
+        <component>0.669582</component>
+        <component>0.072341</component>
+        <component>0.819757</component>
+    </color>
+    <color space="0">
+        <component>0.668422</component>
+        <component>0.071136</component>
+        <component>0.822761</component>
+    </color>
+    <color space="0">
+        <component>0.667262</component>
+        <component>0.069930</component>
+        <component>0.825765</component>
+    </color>
+    <color space="0">
+        <component>0.666103</component>
+        <component>0.068724</component>
+        <component>0.828769</component>
+    </color>
+    <color space="0">
+        <component>0.664943</component>
+        <component>0.067519</component>
+        <component>0.831773</component>
+    </color>
+    <color space="0">
+        <component>0.663783</component>
+        <component>0.066313</component>
+        <component>0.834777</component>
+    </color>
+    <color space="0">
+        <component>0.662624</component>
+        <component>0.065107</component>
+        <component>0.837781</component>
+    </color>
+    <color space="0">
+        <component>0.661464</component>
+        <component>0.063901</component>
+        <component>0.840785</component>
+    </color>
+    <color space="0">
+        <component>0.660304</component>
+        <component>0.062696</component>
+        <component>0.843789</component>
+    </color>
+    <color space="0">
+        <component>0.659145</component>
+        <component>0.061490</component>
+        <component>0.846793</component>
+    </color>
+    <color space="0">
+        <component>0.657985</component>
+        <component>0.060284</component>
+        <component>0.849797</component>
+    </color>
+    <color space="0">
+        <component>0.656825</component>
+        <component>0.059079</component>
+        <component>0.852801</component>
+    </color>
+    <color space="0">
+        <component>0.655665</component>
+        <component>0.057873</component>
+        <component>0.855805</component>
+    </color>
+    <color space="0">
+        <component>0.654506</component>
+        <component>0.056667</component>
+        <component>0.858809</component>
+    </color>
+    <color space="0">
+        <component>0.653346</component>
+        <component>0.055462</component>
+        <component>0.861813</component>
+    </color>
+    <color space="0">
+        <component>0.652186</component>
+        <component>0.054256</component>
+        <component>0.864817</component>
+    </color>
+    <color space="0">
+        <component>0.651027</component>
+        <component>0.053050</component>
+        <component>0.867821</component>
+    </color>
+    <color space="0">
+        <component>0.649867</component>
+        <component>0.051845</component>
+        <component>0.870826</component>
+    </color>
+    <color space="0">
+        <component>0.648707</component>
+        <component>0.050639</component>
+        <component>0.873830</component>
+    </color>
+    <color space="0">
+        <component>0.647548</component>
+        <component>0.049433</component>
+        <component>0.876834</component>
+    </color>
+    <color space="0">
+        <component>0.646388</component>
+        <component>0.048228</component>
+        <component>0.879838</component>
+    </color>
+    <color space="0">
+        <component>0.645228</component>
+        <component>0.047022</component>
+        <component>0.882842</component>
+    </color>
+    <color space="0">
+        <component>0.644068</component>
+        <component>0.045816</component>
+        <component>0.885846</component>
+    </color>
+    <color space="0">
+        <component>0.642909</component>
+        <component>0.044610</component>
+        <component>0.888850</component>
+    </color>
+    <color space="0">
+        <component>0.641749</component>
+        <component>0.043405</component>
+        <component>0.891854</component>
+    </color>
+    <color space="0">
+        <component>0.640589</component>
+        <component>0.042199</component>
+        <component>0.894858</component>
+    </color>
+    <color space="0">
+        <component>0.639430</component>
+        <component>0.040993</component>
+        <component>0.897862</component>
+    </color>
+    <color space="0">
+        <component>0.638270</component>
+        <component>0.039788</component>
+        <component>0.900866</component>
+    </color>
+    <color space="0">
+        <component>0.637110</component>
+        <component>0.038582</component>
+        <component>0.903870</component>
+    </color>
+    <color space="0">
+        <component>0.635951</component>
+        <component>0.037376</component>
+        <component>0.906874</component>
+    </color>
+    <color space="0">
+        <component>0.634791</component>
+        <component>0.036171</component>
+        <component>0.909878</component>
+    </color>
+    <color space="0">
+        <component>0.633631</component>
+        <component>0.034965</component>
+        <component>0.912882</component>
+    </color>
+    <color space="0">
+        <component>0.632472</component>
+        <component>0.033759</component>
+        <component>0.915886</component>
+    </color>
+    <color space="0">
+        <component>0.631312</component>
+        <component>0.032554</component>
+        <component>0.918890</component>
+    </color>
+    <color space="0">
+        <component>0.630152</component>
+        <component>0.031348</component>
+        <component>0.921894</component>
+    </color>
+    <color space="0">
+        <component>0.628992</component>
+        <component>0.030142</component>
+        <component>0.924899</component>
+    </color>
+    <color space="0">
+        <component>0.627833</component>
+        <component>0.028937</component>
+        <component>0.927903</component>
+    </color>
+    <color space="0">
+        <component>0.626673</component>
+        <component>0.027731</component>
+        <component>0.930907</component>
+    </color>
+    <color space="0">
+        <component>0.625513</component>
+        <component>0.026525</component>
+        <component>0.933911</component>
+    </color>
+    <color space="0">
+        <component>0.624354</component>
+        <component>0.025319</component>
+        <component>0.936915</component>
+    </color>
+    <color space="0">
+        <component>0.623194</component>
+        <component>0.024114</component>
+        <component>0.939919</component>
+    </color>
+    <color space="0">
+        <component>0.622034</component>
+        <component>0.022908</component>
+        <component>0.942923</component>
+    </color>
+    <color space="0">
+        <component>0.620875</component>
+        <component>0.021702</component>
+        <component>0.945927</component>
+    </color>
+    <color space="0">
+        <component>0.619715</component>
+        <component>0.020497</component>
+        <component>0.948931</component>
+    </color>
+    <color space="0">
+        <component>0.618555</component>
+        <component>0.019291</component>
+        <component>0.951935</component>
+    </color>
+    <color space="0">
+        <component>0.617395</component>
+        <component>0.018085</component>
+        <component>0.954939</component>
+    </color>
+    <color space="0">
+        <component>0.616236</component>
+        <component>0.016880</component>
+        <component>0.957943</component>
+    </color>
+    <color space="0">
+        <component>0.615076</component>
+        <component>0.015674</component>
+        <component>0.960947</component>
+    </color>
+    <color space="0">
+        <component>0.613916</component>
+        <component>0.014468</component>
+        <component>0.963951</component>
+    </color>
+    <color space="0">
+        <component>0.612757</component>
+        <component>0.013263</component>
+        <component>0.966955</component>
+    </color>
+    <color space="0">
+        <component>0.611597</component>
+        <component>0.012057</component>
+        <component>0.969959</component>
+    </color>
+    <color space="0">
+        <component>0.610437</component>
+        <component>0.010851</component>
+        <component>0.972964</component>
+    </color>
+    <color space="0">
+        <component>0.609278</component>
+        <component>0.009646</component>
+        <component>0.975968</component>
+    </color>
+    <color space="0">
+        <component>0.608118</component>
+        <component>0.008440</component>
+        <component>0.978972</component>
+    </color>
+    <color space="0">
+        <component>0.606958</component>
+        <component>0.007234</component>
+        <component>0.981976</component>
+    </color>
+    <color space="0">
+        <component>0.605798</component>
+        <component>0.006028</component>
+        <component>0.984980</component>
+    </color>
+    <color space="0">
+        <component>0.604639</component>
+        <component>0.004823</component>
+        <component>0.987984</component>
+    </color>
+    <color space="0">
+        <component>0.603479</component>
+        <component>0.003617</component>
+        <component>0.990988</component>
+    </color>
+    <color space="0">
+        <component>0.602319</component>
+        <component>0.002411</component>
+        <component>0.993992</component>
+    </color>
+    <color space="0">
+        <component>0.601160</component>
+        <component>0.001206</component>
+        <component>0.996996</component>
+    </color>
+    <color space="0">
+        <component>0.600000</component>
+        <component>0.000000</component>
+        <component>1.000000</component>
+    </color>
+</scheme>
