@@ -1,119 +1,57 @@
-colors = []
-count = 0
-gradient = []
-pos = 1.7
-px = 8
-#dim = px * 64
-dim = 500
-margin = 80
-zoom = 0
-colorRange = 255
-circleSize = 128
+steps = 256
+slice = Math.PI / steps
+
+canvasSize = 500
+sphereSize = 420
+padding = (canvasSize - sphereSize) / 2
+
+strokeSize = [0]
+strokeSteps = (1 / (steps / 2))
+
+for i to steps
+  if i isnt 0 then
+    if i <= steps / 2
+      strokeSize[i] = strokeSize[(i - 1)] + strokeSteps
+    else if i > steps / 2
+      strokeSize[i] = strokeSize[(i - 1)] - strokeSteps
+
+#console.log strokeSize
 
 # --------------------------------------------------------------------------
 
 setup = !->
-  createCanvas dim, dim
-  colorMode HSB, 255
-
-  #noStroke!
+  createCanvas canvasSize, canvasSize
+  colorMode HSB, 256
+  bezierDetail 128
   noFill!
 
 # --------------------------------------------------------------------------
 
 draw = !->
   clear!
-  background 0, 0, 245
-
-  steps = 32
-  slice = PI / steps
-
-  size = 420
-  offset = 40
+  background 0 0 250
 
   for i to steps
-    range = ((sin i * slice - HALF_PI) + 1) * 0.5
 
-    sin1 = lerp (size / TWO_PI) * -1, (size / TWO_PI), range
-    sin2 = lerp 0, size, range
-    #range = lerp 1 5 mov
+    sin1 = ((sin i * slice - HALF_PI) + 1) * 0.5
+    sin2 = 128 + (128 * (sin (i + frameCount) * 0.01))
 
-    color = ( 255 / steps) * i
-    #stroke color, 255, 255, color
-    #stroke color
+    range1 = lerp (sphereSize / TWO_PI) * -1, (sphereSize / TWO_PI), sin1
+    range2 = lerp 0, sphereSize, sin1
+    range3 = lerp 0, 2, strokeSize[i]
+    range4 = lerp 0, 256, strokeSize[i]
 
-    #console.log sin1
+    strokeWeight range3
+    stroke sin2, 256, 256, range4
 
-    bezier (size / 2) + offset, 0 + offset,
-           sin1 + sin2 + offset, 0 + offset,
-           sin1 + sin2 + offset, size + offset,
-           (size / 2) + offset, size + offset
+    bezier (sphereSize / 2) + padding, 0 + padding,
+           range1 + range2 + padding, 0 + padding,
+           range1 + range2 + padding, sphereSize + padding,
+           (sphereSize / 2) + padding, sphereSize + padding
 
-
-    #bezier (size / 2) + offset, 0 + offset,
-           #range +  (size / TWO_PI) + offset, 0 + offset,
-           #range +  (size / TWO_PI) + offset, size + offset,
-           #(size / 2) + offset, size + offset
-
-
-
-    #bezier size, size,
-           #( size / 3 ) * range, size + 5,
-           #( size / 3 ) * range, ( size * 2 ) - 5,
-           #size, size * 2
-
-    #bezier 110, 0,
-           #( size / 2 ) * range, size ,
-           #( size / 2 ) * range, ( size * 2 ) - 5,
-           #110, size
-
-  /*
-
-  #console.log size / TWO_PI
-
-  stroke 0
-  ellipse (size / 2) + offset, (size / 2) + offset, size, size
-
-  stroke 255, 0, 0
-
-  # LEFT
-  bezier (size / 2) + offset, 0 + offset,
-         -28 + 0 + offset, 0 + offset,
-         -28 + 0 + offset, size + offset,
-         (size / 2) + offset, size + offset
-
-  stroke 0, 255, 0
-
-  # RIGHT
-  bezier (size / 2) + offset, 0 + offset,
-         28 + size + offset, 0 + offset,
-         28 + size  + offset, size + offset,
-         (size / 2) + offset, size + offset
-
-  */
-  /*
-  # LEFT
-  bezier (size / 2) + offset, 0 + offset,
-         0 - (size / TWO_PI) + offset, 0 + offset,
-         0 - (size / TWO_PI) + offset, size + offset,
-         (size / 2) + offset, size + offset
-
-  stroke 0, 255, 0
-
-  # RIGHT
-  bezier (size / 2) + offset, 0 + offset,
-         size + (size / TWO_PI) + offset, 0 + offset,
-         size + (size / TWO_PI) + offset, size + offset,
-         (size / 2) + offset, size + offset
-  */
-
-  #stroke 0, 255, 0
-
-  #bezier (size / 2), 0,
-         #(size / 3) * 5, size + 5,
-         #(size / 3) * 5, ( size * 2 ) - 5,
-         #(size / 2), size
-
-  #pos++
+    bezier 0 + padding, (sphereSize / 2) + padding,
+           0 + padding, range1 + range2 + padding,
+           sphereSize + padding, range1 + range2 + padding,
+           sphereSize + padding, (sphereSize / 2) + padding
 
 mousePressed = !-> noLoop!
