@@ -2,6 +2,16 @@ canvasSize = 256
 pixelSize = 8
 colorRange = 100
 
+shape = [[0 0 2 2 2 0 0]
+         [0 2 1 1 1 2 0]
+         [2 1 1 2 1 1 2]
+         [2 1 2 1 2 1 2]
+         [2 1 1 2 1 1 2]
+         [0 2 1 1 1 2 0]
+         [0 0 2 2 2 0 0]]
+
+shapeSize = -((shape.length - 1) / 2) * pixelSize
+
 position =
   for to canvasSize
     for to canvasSize
@@ -11,7 +21,7 @@ position =
 
 setup = !->
   createCanvas canvasSize, canvasSize
-  noStroke!
+  #noStroke!
   colorMode HSB, colorRange
 
 # --------------------------------------------------------------------------
@@ -21,8 +31,10 @@ draw = !->
 
   for y til canvasSize by pixelSize
     for x til canvasSize by pixelSize
-      fill 50, 100, constrain position[x][y], 0, colorRange
+      fill 33, 66, position[x][y]
       rect x, y, pixelSize, pixelSize
+
+      position[x][y] -= 4 if position[x][y] > 0
 
 # --------------------------------------------------------------------------
 
@@ -35,8 +47,15 @@ mousePressed = mouseDragged = !->
     baseX = mouseX - (mouseX % pixelSize)
     baseY = mouseY - (mouseY % pixelSize)
 
-    for x to pixelSize
-      for y to pixelSize
-        position[baseX - pixelSize + x][baseY - pixelSize + y] += 20
+    getCoord = (base,mult) -> (base + (shapeSize + (pixelSize * mult)))
+
+    for shapeX til shape.length
+      for shapeY til shape.length
+
+        posX = getCoord baseX, shapeX
+        posY = getCoord baseY, shapeY
+
+        position[posX][posY] = 100  if shape[shapeX][shapeY] is 2
+        position[posX][posY] = 0    if shape[shapeX][shapeY] is 1
 
 keyPressed = !-> noLoop!
