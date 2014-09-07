@@ -1,50 +1,40 @@
-canvasSize = 100
-pixelArrayLenght = Math.pow(8,2) * 4
+canvasSize = 256
+pixelSize = 4
+colorRange = 100
 
-value = 0
 position =
   for to canvasSize
     for to canvasSize
-      #[0 1 2 255]
-      for to 4
-        255
-
-#console.log position
+      0
 
 # --------------------------------------------------------------------------
 
 setup = !->
   createCanvas canvasSize, canvasSize
-  noFill!
-  loadPixels!
+  noStroke!
+  colorMode HSB, colorRange
 
 # --------------------------------------------------------------------------
 
 draw = !->
-  count = 0
-
-  for y til canvasSize
-    for x til canvasSize
-
-      pixels[count] = position[x][y][0]
-      pixels[count + 1] = position[x][y][1]
-      pixels[count + 2] = position[x][y][2]
-      pixels[count + 3] = position[x][y][3]
-
-      count += 4
-
-  updatePixels!
+  for y til canvasSize by pixelSize
+    for x til canvasSize by pixelSize
+      fill 50, 100, constrain position[x][y], 0, colorRange
+      rect x, y, pixelSize, pixelSize
 
 # --------------------------------------------------------------------------
 
-mouseMoved = !->
+mousePressed = mouseDragged = !->
   if mouseX >= 0 and
      mouseX <= canvasSize and
      mouseY >= 0 and
      mouseY <= canvasSize
 
-    position[mouseX][mouseY] = [0 0 0 255]
-    console.log mouseX, mouseY
+    baseX = mouseX - (mouseX % pixelSize)
+    baseY = mouseY - (mouseY % pixelSize)
 
-#mousePressed = !-> noLoop!
-#keyPressed = !-> noLoop!
+    for x to pixelSize
+      for y to pixelSize
+        position[baseX - pixelSize + x][baseY - pixelSize + y] += 20
+
+keyPressed = !-> noLoop!
