@@ -25,10 +25,10 @@ draw = function(){
     y = i$;
     for (j$ = 0, to1$ = canvasSize, step1$ = pixelSize; step1$ < 0 ? j$ > to1$ : j$ < to1$; j$ += step1$) {
       x = j$;
-      fill(33, 66, position[x][y]);
+      fill(lerp(60, 100, position[x][y] / colorRange), colorRange, position[x][y]);
       rect(x, y, pixelSize, pixelSize);
       if (position[x][y] > 0) {
-        position[x][y] -= 4;
+        position[x][y] -= 2;
       }
     }
   }

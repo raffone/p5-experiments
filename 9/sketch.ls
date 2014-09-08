@@ -31,10 +31,13 @@ draw = !->
 
   for y til canvasSize by pixelSize
     for x til canvasSize by pixelSize
-      fill 33, 66, position[x][y]
+
+
+      fill lerp(60, 100, position[x][y] / colorRange), colorRange, position[x][y]
+
       rect x, y, pixelSize, pixelSize
 
-      position[x][y] -= 4 if position[x][y] > 0
+      position[x][y] -= 2 if position[x][y] > 0
 
 # --------------------------------------------------------------------------
 
