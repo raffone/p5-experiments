@@ -1,11 +1,17 @@
 canvasWidth     = 320
 canvasHeight    = 200
 
+count = 0
+count2 = 0
+count3 = 0
+#line2 = 0
+
 #centerPoint     = 0
-vortexMult      = 0
+#vortexMult      = 0
 
 # --------------------------------------------------------------------------
 
+/*
 drawCircle = (x0, y0, radius, color, opacity) !->
 
   x = radius
@@ -28,7 +34,9 @@ drawCircle = (x0, y0, radius, color, opacity) !->
     else
       x--
       radiusError += 2 * (y - x + 1)
+*/
 
+/*
 drawPixel = (x, y, color, opacity) !->
   if x >= 0 and
      y >= 0 and
@@ -43,10 +51,12 @@ drawPixel = (x, y, color, opacity) !->
     pixels[x + y]     = color[0] - opacity
     pixels[x + y + 1] = color[1] - opacity
     pixels[x + y + 2] = color[2] - opacity
+*/
 
 # --------------------------------------------------------------------------
 
-colorRange      = 255
+
+/*
 colorRGB        = [colorRange, 0, 0]
 colorInc        = 4.90
 colorStepCurr   = 0
@@ -74,6 +84,15 @@ incrementColor = !->
 
   if colorStepCurr is colorSteps.length
     colorStepCurr := 0
+*/
+
+stepMax    = 0.4
+stepMin    = 0.05
+stepInc    = 0.025
+stepOffset = 20
+
+colorRange = 255
+colorInc   = colorRange / ( (stepMax - stepMin) / stepInc)
 
 # --------------------------------------------------------------------------
 
@@ -82,31 +101,41 @@ setup = !->
 
 # --------------------------------------------------------------------------
 
+sinPixel = (x, y0,  color) !->
+  yHeightMult = 0 + (y0 * sin (count * 0.04))
+  yPosition = sin (x + count) * 0.04
+
+  y = (height * 0.5) + (height * yHeightMult) * yPosition
+
+  xOffsetMult = 0.04 #+ (0.01 * sin (count3++ * 0.000000004))
+  yOffsetMult = 0.02 #+ (0.01 * sin (count3++ * 0.000000004))
+
+  xOffset = 20 + (20 * sin (count2++ * xOffsetMult))
+  yOffset = 20 + (20 * cos (count2++ * yOffsetMult))
+
+  stroke color
+  point x + xOffset, y + yOffset - stepOffset
+
+
 draw = !->
   background 0
-  loadPixels!
+  #loadPixels!
 
-  inc = colorRange / canvasWidth
+  for x from -40 til canvasWidth
 
-  #opacities = []
+    color = 0
 
-  for i til canvasWidth
-    incrementColor!
+    for i from stepMin to stepMax by stepInc
+      sinPixel x, i, color
+      color += colorInc
 
-    vort = i * (0.10 + (0.06 * sin vortexMult * 0.005))
-
-    centerX = (canvasWidth * 0.5) + floor(80 * cos vort )
-    centerY = (canvasHeight * 0.5) + floor(80 * sin vort )
+      #drawPixel line1X, line1Y, [255,255,255], 255
 
 
-    opacity = max 0, ( i * inc  ) - ( max 0, floor (width / 2) - i)
 
-    drawCircle centerX, centerY, i, colorRGB, opacity
+  count++
 
-  #centerPoint++
-  vortexMult++
-
-  updatePixels!
+  #updatePixels!
 
 # --------------------------------------------------------------------------
 
