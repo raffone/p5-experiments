@@ -1,25 +1,26 @@
 canvasWidth     = 320
 canvasHeight    = 200
 
-centerPoint     = 1
+centerPoint     = 0
+vortexMult      = 0
 
 # --------------------------------------------------------------------------
 
-drawCircle = (x0, y0, radius, color) !->
+drawCircle = (x0, y0, radius, color, opacity) !->
 
   x = radius
   y = 0
   radiusError = 1 - x
 
   while x >= y
-    drawPixel  x + x0 ,  y + y0 , color
-    drawPixel  y + x0 ,  x + y0 , color
-    drawPixel -x + x0 ,  y + y0 , color
-    drawPixel -y + x0 ,  x + y0 , color
-    drawPixel -x + x0 , -y + y0 , color
-    drawPixel -y + x0 , -x + y0 , color
-    drawPixel  x + x0 , -y + y0 , color
-    drawPixel  y + x0 , -x + y0 , color
+    drawPixel  x + x0 ,  y + y0 , color , opacity
+    drawPixel  y + x0 ,  x + y0 , color , opacity
+    drawPixel -x + x0 ,  y + y0 , color , opacity
+    drawPixel -y + x0 ,  x + y0 , color , opacity
+    drawPixel -x + x0 , -y + y0 , color , opacity
+    drawPixel -y + x0 , -x + y0 , color , opacity
+    drawPixel  x + x0 , -y + y0 , color , opacity
+    drawPixel  y + x0 , -x + y0 , color , opacity
     y++
 
     if radiusError < 0
@@ -28,7 +29,7 @@ drawCircle = (x0, y0, radius, color) !->
       x--
       radiusError += 2 * (y - x + 1)
 
-drawPixel = (x, y, color) !->
+drawPixel = (x, y, color, opacity) !->
   if x >= 0 and
      y >= 0 and
      x <= canvasWidth and
@@ -40,6 +41,8 @@ drawPixel = (x, y, color) !->
     pixels[x + y]     = color[0]
     pixels[x + y + 1] = color[1]
     pixels[x + y + 2] = color[2]
+    #pixels[x + y + 3] = opacity
+    #pixels[x + y + 3] = 255
 
 # --------------------------------------------------------------------------
 
@@ -84,17 +87,18 @@ draw = !->
   background 0
   loadPixels!
 
-  inc = canvasWidth / 100
-  color = 0
+  inc = 100 / canvasWidth
 
   for i til width
-    #incrementColor!
+    incrementColor!
     #
 
-    temp = (centerPoint * 0.03) + (i * 0.01)
+    #vort = 0.12 + (0.08 * abs sin vortexMult * 0.02)
+    vort = 0.12
+    mult = (centerPoint * 0.03) + (i * vort)
 
-    centerX = (canvasWidth * 0.5) + floor(80 * cos temp )
-    centerY = (canvasHeight * 0.5) + floor(80 * sin temp )
+    centerX = (canvasWidth * 0.5) + floor(80 * cos mult )
+    centerY = (canvasHeight * 0.5) + floor(80 * sin mult )
 
     #console.log centerX, centerY
 
@@ -109,7 +113,19 @@ draw = !->
     #centerY = (canvasHeight * 0.5) + floor(mult * sin centerPoint * 0.04)
 
     #drawCircle centerX, centerY, i, [color, color, color]
-    drawCircle centerX, centerY, i, [i, i, i]
+    opacity = ( i * inc )
+    color = [opacity, opacity, opacity]
+    #drawCircle centerX, centerY, i, colorRGB, opacity
+    #
+
+    #drawCircle centerX, centerY, i, [color, color, color]
+    #
+    #
+    #
+    #
+    drawCircle centerX, centerY, i, color
+
+    #console.log color
 
     #stroke i
     #point centerX, centerY
@@ -120,6 +136,8 @@ draw = !->
   #console.log \-----
 
   centerPoint++
+  vortexMult++
+
   updatePixels!
 
 # --------------------------------------------------------------------------
