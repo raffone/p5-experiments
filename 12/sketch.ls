@@ -1,7 +1,7 @@
 canvasWidth     = 320
-canvasHeight    = 199
+canvasHeight    = 200
 
-centerPoint     = 0
+centerPoint     = 1
 
 # --------------------------------------------------------------------------
 
@@ -45,8 +45,7 @@ drawPixel = (x, y, color) !->
 
 colorRange      = 255
 colorRGB        = [colorRange, 0, 0]
-#colorInc        = 4.77
-colorInc        = 9.5
+colorInc        = 4.75
 colorStepCurr   = 0
 colorStepCount  = 0
 colorSteps      =
@@ -82,15 +81,43 @@ setup = !->
 # --------------------------------------------------------------------------
 
 draw = !->
-  background 255
+  background 0
   loadPixels!
 
-  centerX = (canvasWidth * 0.5) + floor(80 * cos centerPoint * 0.03)
-  centerY = (canvasHeight * 0.5) + floor(80 * sin centerPoint * 0.03)
+  inc = canvasWidth / 100
+  color = 0
 
-  for i to width
-    incrementColor!
-    drawCircle centerX, centerY, i, colorRGB
+  for i til width
+    #incrementColor!
+    #
+
+    temp = (centerPoint * 0.03) + (i * 0.01)
+
+    centerX = (canvasWidth * 0.5) + floor(80 * cos temp )
+    centerY = (canvasHeight * 0.5) + floor(80 * sin temp )
+
+    #console.log centerX, centerY
+
+    # Tunner
+    #centerX = (canvasWidth * 0.5) + floor((80 * (i / 100)) * cos centerPoint * 0.03)
+    #centerY = (canvasHeight * 0.5) + floor((80 * (i / 100)) * sin centerPoint * 0.03)
+
+    #mult = (320 - i) / 4
+
+
+    #centerX = (canvasWidth * 0.5) + floor(mult * cos centerPoint * 0.04)
+    #centerY = (canvasHeight * 0.5) + floor(mult * sin centerPoint * 0.04)
+
+    #drawCircle centerX, centerY, i, [color, color, color]
+    drawCircle centerX, centerY, i, [i, i, i]
+
+    #stroke i
+    #point centerX, centerY
+
+    #color += inc
+
+
+  #console.log \-----
 
   centerPoint++
   updatePixels!
