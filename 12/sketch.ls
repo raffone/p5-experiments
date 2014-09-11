@@ -41,11 +41,9 @@ drawPixel = (x, y, color, opacity) !->
     pixels[x + y]     = color[0]
     pixels[x + y + 1] = color[1]
     pixels[x + y + 2] = color[2]
-    #pixels[x + y + 3] = opacity
-    #pixels[x + y + 3] = 255
 
 # --------------------------------------------------------------------------
-
+/*
 colorRange      = 255
 colorRGB        = [colorRange, 0, 0]
 colorInc        = 4.75
@@ -74,12 +72,13 @@ incrementColor = !->
 
   if colorStepCurr is colorSteps.length
     colorStepCurr := 0
-
+*/
 
 # --------------------------------------------------------------------------
 
 setup = !->
   createCanvas canvasWidth, canvasHeight
+
 
 # --------------------------------------------------------------------------
 
@@ -87,53 +86,28 @@ draw = !->
   background 0
   loadPixels!
 
-  inc = 100 / canvasWidth
+  inc = 255 / canvasWidth
 
-  for i til width
-    incrementColor!
+  opacities = []
+
+  for i til canvasWidth
+    #incrementColor!
     #
 
-    #vort = 0.12 + (0.08 * abs sin vortexMult * 0.02)
-    vort = 0.12
+    vort = 0.10 + (0.06 * sin vortexMult * 0.01)
+    #vort = 0.10
     mult = (centerPoint * 0.03) + (i * vort)
 
     centerX = (canvasWidth * 0.5) + floor(80 * cos mult )
     centerY = (canvasHeight * 0.5) + floor(80 * sin mult )
 
-    #console.log centerX, centerY
 
-    # Tunner
-    #centerX = (canvasWidth * 0.5) + floor((80 * (i / 100)) * cos centerPoint * 0.03)
-    #centerY = (canvasHeight * 0.5) + floor((80 * (i / 100)) * sin centerPoint * 0.03)
+    opacity = max 0, ( i * inc  ) - ( max 0, floor (width / 2) - i)
+    color = [0, opacity - 20, opacity]
 
-    #mult = (320 - i) / 4
+    opacities.push opacity
 
-
-    #centerX = (canvasWidth * 0.5) + floor(mult * cos centerPoint * 0.04)
-    #centerY = (canvasHeight * 0.5) + floor(mult * sin centerPoint * 0.04)
-
-    #drawCircle centerX, centerY, i, [color, color, color]
-    opacity = ( i * inc )
-    color = [opacity, opacity, opacity]
-    #drawCircle centerX, centerY, i, colorRGB, opacity
-    #
-
-    #drawCircle centerX, centerY, i, [color, color, color]
-    #
-    #
-    #
-    #
     drawCircle centerX, centerY, i, color
-
-    #console.log color
-
-    #stroke i
-    #point centerX, centerY
-
-    #color += inc
-
-
-  #console.log \-----
 
   centerPoint++
   vortexMult++
