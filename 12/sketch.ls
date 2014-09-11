@@ -38,12 +38,15 @@ drawPixel = (x, y, color, opacity) !->
     x = x * 4
     y = (y * canvasWidth) * 4
 
-    pixels[x + y]     = color[0]
-    pixels[x + y + 1] = color[1]
-    pixels[x + y + 2] = color[2]
+    opacity = 255 - opacity
+
+    pixels[x + y]     = color[0] - opacity
+    pixels[x + y + 1] = color[1] - opacity
+    pixels[x + y + 2] = color[2] - opacity
 
 # --------------------------------------------------------------------------
 /*
+*/
 colorRange      = 255
 colorRGB        = [colorRange, 0, 0]
 colorInc        = 4.75
@@ -72,7 +75,6 @@ incrementColor = !->
 
   if colorStepCurr is colorSteps.length
     colorStepCurr := 0
-*/
 
 # --------------------------------------------------------------------------
 
@@ -91,25 +93,30 @@ draw = !->
   opacities = []
 
   for i til canvasWidth
-    #incrementColor!
+    incrementColor!
     #
 
-    vort = 0.10 + (0.06 * sin vortexMult * 0.01)
+    vort = 0.10 + (0.06 * sin vortexMult * 0.005)
+    mult = (i * vort)
+
     #vort = 0.10
-    mult = (centerPoint * 0.03) + (i * vort)
+    #mult = (centerPoint * 0.07) + (i * vort)
 
     centerX = (canvasWidth * 0.5) + floor(80 * cos mult )
     centerY = (canvasHeight * 0.5) + floor(80 * sin mult )
 
 
     opacity = max 0, ( i * inc  ) - ( max 0, floor (width / 2) - i)
-    color = [0, opacity - 20, opacity]
+
+    #color = [opacity, 0, 85 - (opacity / 3)]
+    #color = [opacity, 0, 0]
 
     opacities.push opacity
 
-    drawCircle centerX, centerY, i, color
+    #drawCircle centerX, centerY, i, color
+    drawCircle centerX, centerY, i, colorRGB, opacity
 
-  centerPoint++
+  #centerPoint++
   vortexMult++
 
   updatePixels!
