@@ -1,16 +1,17 @@
-canvasWidth  = 500
-canvasHeight = 500
-#canvasMargin = 50
-canvasMargin = 0
+canvasWidth   = 500
+canvasHeight  = 500
+canvasMargin  = 50
+#canvasMargin = 0
 
-halfWidth    = canvasWidth * 0.5
-halfHeight   = canvasHeight * 0.5
+halfWidth     = canvasWidth * 0.5
+halfHeight    = canvasHeight * 0.5
 
-circleR      = 250
+circleDiag    = canvasWidth - (canvasMargin * 2)
+circleRad     = circleDiag * 0.5
 
-colorRange   = 255
+colorRange    = 255
 
-debug = true
+debug         = true
 
 # --------------------------------------------------------------------------
 
@@ -47,18 +48,24 @@ setup = !->
 
   for i til steps
 
-    x = circleR + (circleR * sin (inc * i)) + canvasMargin
-    y = circleR + (circleR * cos (inc * i)) + canvasMargin
+    x = circleRad + (circleRad * sin (inc * i)) + canvasMargin
+    y = circleRad + (circleRad * cos (inc * i)) + canvasMargin
 
-    fill 255
-    ellipse x, y, 4, 4
+    if debug
+      fill 255
+      ellipse x, y, 4, 4
 
     points.push do
       x: x
       y: y
 
-  console.log points
-  console.log points.length
+  #console.log points
+  #console.log points.length
+
+  if debug
+    for i from 1 til points.length
+      stroke 0 255 0
+      line points[i].x, points[i].y, points[i - 1].x, points[i - 1].y
 
   # Make pairs
   pairs = []
@@ -82,8 +89,8 @@ setup = !->
       left: left
 
 
-  console.log pairs
-  console.log pairs.length
+  #console.log pairs
+  #console.log pairs.length
 
   noFill!
 
@@ -97,11 +104,12 @@ setup = !->
     #ellipseHeightMolt = 3.5
     #ellipseHeightMolt = 1
 
-    ellipseWidth = (circleR * 2) - (pairs[i].left.x * 2)
+    #ellipseWidth = (circleR * 2) - (pairs[i].left.x * 2)
     #ellipseHeight = ( (circleR * 2) - (pairs[i].left.x * 2) ) * ellipseHeightMolt
 
     #ellipseHeight = ( pairs[i].left.y - pairs[i - 1].left.y)
 
+    ellipseWidth = pairs[i].left.x - pairs[i].right.x
 
     ellipseHeight = (pairs[i - 1].left.y - pairs[i + 1].left.y) * 0.5
 
@@ -126,17 +134,21 @@ setup = !->
 
     stroke 255 0 0
 
-    ellipse circleR + canvasMargin,
-            (pairs[i].left.y  + ellipseHeightOffset) + canvasMargin,
+    ellipse halfWidth,
+            pairs[i].left.y,
             ellipseWidth,
+            #ellipseHeight * 7
             ellipseHeight
 
     #------------------------------------------------------------
+    if debug
+      stroke 0 150 255
+      ellipse halfWidth, pairs[i].left.y, 2,2
 
+  if debug
     stroke 0 255 0
-    ellipse circleR + canvasMargin,
-          (pairs[i].left.y  + ellipseHeightOffset) + canvasMargin,
-          2,2
+    #ellipse halfWidth, halfHeight, circleDiag, circleDiag
+
 
   /*
 
