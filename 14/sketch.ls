@@ -1,32 +1,37 @@
-canvasWidth     = 400
-canvasHeight    = 400
+canvasWidth  = 300
+canvasHeight = 300
+canvasMargin = 50
 
-halfWidth     = canvasWidth * 0.5
-halfHeight    = canvasHeight * 0.5
+halfWidth    = canvasWidth * 0.5
+halfHeight   = canvasHeight * 0.5
 
-#stepMax    = 0.4
-#stepMin    = 0.05
-#stepInc    = 0.025
-#stepOffset = 20
+circleR      = 100
 
-colorRange = 255
-#colorInc   = colorRange / ( (stepMax - stepMin) / stepInc)
+colorRange   = 255
+
 
 # --------------------------------------------------------------------------
 
 setup = !->
   createCanvas canvasWidth, canvasHeight
 
+# --------------------------------------------------------------------------
+
+draw = !->
+
+  clear!
+
+
   background 0
   fill 0
 
-  /*
-  stroke 100
-  ellipse halfWidth, halfHeight, height, height
+  # circle outline
+  stroke 255 0 0
+  ellipse halfWidth,
+          halfHeight,
+          circleR * 2,
+          circleR * 2
 
-  stroke 255
-  ellipse halfWidth, halfHeight, 2, 2
-*/
 
 
 
@@ -39,10 +44,10 @@ setup = !->
     stroke 255, 0, 0
     fill 255, 0, 0
 
-    x = halfHeight + (halfHeight * sin (inc * i))
-    y = halfHeight + (halfHeight * cos (inc * i))
+    x = circleR + (circleR * sin (inc * i))
+    y = circleR + (circleR * cos (inc * i))
 
-    ellipse x, y, 4, 4
+    #ellipse x, y, 4, 4
 
     points.push do
       x: x
@@ -60,33 +65,51 @@ setup = !->
 
 
   # Draw lines
-  for pair in pairs
+  #for pair in pairs
+  for i til pairs.length
 
+
+    # straight
+    /*
     stroke 125
 
-    line pair.left.x, pair.left.y,
-         pair.right.x, pair.right.y
+    line pairs[i].left.x, pairs[i].left.y,
+         pairs[i].right.x, pairs[i].right.y
 
-    line pair.left.y, pair.left.x,
-         pair.right.y, pair.right.x
+    line pairs[i].left.y, pairs[i].left.x,
+         pairs[i].right.y, pairs[i].right.x
+    */
 
-    # --
 
     stroke 0 255 0
+    fill 0 0 0 0
 
-    line pair.left.x, pair.left.y,
-         pair.right.y, pair.right.x
 
-    line pair.left.y, pair.left.x,
-         pair.right.x, pair.right.y
+    ellipseHeightMolt = 0.2 + (0.4 * sin frameCount * 0.01)
 
+    ellipseWidth = (circleR * 2) - (pairs[i].left.x * 2)
+    ellipseHeight = ( (circleR * 2) - (pairs[i].left.x * 2) ) * ellipseHeightMolt
+    ellipseHeightOffset = ellipseHeight / 2
+
+    ellipse circleR + canvasMargin,
+            pairs[i].left.y + canvasMargin,
+            ellipseWidth,
+            ellipseHeight
+
+
+    # diagonal
+    /*
+    stroke 0 255 0
+
+    line pairs[i].left.x, pairs[i].left.y,
+         pairs[i].right.y, pairs[i].right.x
+
+    line pairs[i].left.y, pairs[i].left.x,
+         pairs[i].right.x, pairs[i].right.y
+    */
 
 
   #console.log pairs
-
-# --------------------------------------------------------------------------
-
-#draw = !->
 
 
 
