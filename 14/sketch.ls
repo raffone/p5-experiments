@@ -11,9 +11,14 @@ circleRad     = circleDiag * 0.5
 
 colorRange    = 255
 
-debug         = true
+#debug         = true
+debug         = false
 
 molt         = 2
+
+
+count1         = 0
+count2         = Math.PI
 
 # --------------------------------------------------------------------------
 
@@ -22,9 +27,27 @@ setup = !->
 
 # --------------------------------------------------------------------------
 
-#draw = !->
+draw = !->
 
   clear!
+
+  molt1 = 0.4 + ( 0.4 + (0.2 * cos count1))
+  #molt1 = ( 0.5 + (0.5 * sin count1 * 0.02))
+  #molt1 = 0.6
+  ##molt2 = 15 + (15 * cos count1 * 0.02)
+  molt2 = 2 + (18 + (18 * cos count2))
+  #molt2 = 37
+  #molt1 = 0.8
+
+  #console.log (cos count1), (cos count2)
+  console.log molt1, molt2
+
+  # 0.4 = 64
+    # 0.6 = 37
+  # 0.8 = 21
+    # 1.0 = 1
+  #
+
 
 
   background 0
@@ -42,16 +65,16 @@ setup = !->
 
 
   # Calc points
-  steps = 44
+  steps = 88
   quaterSteps = steps * 0.25
 
-  inc = PI / (steps / 2)
+  inc = PI / (steps * 0.5)
   points = []
 
   for i til steps
 
     x = circleRad + (circleRad * sin inc * i) + canvasMargin
-    y = circleRad + (circleRad * 0.5 * cos inc * i) + canvasMargin
+    y = circleRad + (circleRad * molt1 * cos inc * i) + canvasMargin
 
     if debug
       fill 255
@@ -85,59 +108,35 @@ setup = !->
 
 
   # Draw lines
-  noFill!
-
-  console.log points[points.length / 2] # Middle top point
-  console.log points[0]                 # Middle bot point
-  console.log points[0].y - points[points.length / 2].y
+  incColor = 255 / (steps * 0.5)
 
   for i from 1 til pairs.length - 1
 
     ellipseWidth = pairs[i].left.x - pairs[i].right.x
-
     ellipseHeight = (pairs[i - 1].left.y - pairs[i + 1].left.y) * 0.5
-
-    ellipseHeightOffset = 0
+    #ellipseHeightOffset = 0
 
     #------------------------------------------------------------
 
-    stroke 255 0 0
+    #stroke 0 0 0 20
+    #fill i * incColor
+
+    noFill!
+    stroke incColor * i
 
     ellipse halfWidth,
             pairs[i].left.y,
             ellipseWidth,
-            #ellipseHeight * 54
-            ellipseHeight * 24
-            #ellipseHeight * 39
-            #ellipseHeight
-            #
-            #
-
-
-    console.log ellipseHeight, ellipseHeight * 24, round ellipseHeight + (ellipseHeight * 24)
-    # 2  |  24
-    # 3  |  39
-
-    # 0.05  |  280
-    # 0.25  |  54
-    # 0.50  |  24
-    # 0.85  |  8
-
-    #
-    # 1.00  |  1    + 5
-    # 0.90  |  6    + 4
-    # 0.80  |  10   + 4
-    # 0.70  |  14   + 4
-    # 0.60  |  18   + 6
-    # 0.50  |  24   + 8
-    # 0.40  |  32
+            ellipseHeight * molt2
 
     #------------------------------------------------------------
     if debug
+      fill 0 0 0 0
       stroke 0 150 255
       ellipse halfWidth, pairs[i].left.y, 2,2
 
   if debug
+    fill 0 0 0 0
     stroke 0 255 0
     ellipse halfWidth, halfHeight, circleDiag, circleDiag
 
@@ -160,6 +159,8 @@ setup = !->
   #console.log pairs.length
 
 
+  count1 += PI / 90
+  count2 += PI / 90
 
 
 
