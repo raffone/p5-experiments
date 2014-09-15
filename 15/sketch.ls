@@ -1,15 +1,16 @@
 canvasWidth  = 400
 canvasHeight = 200
-canvasMargin = 50
+canvasMargin = 40
 
 halfWidth    = canvasWidth * 0.5
 halfHeight   = canvasHeight * 0.5
 
-maxHeight    = 80
-minHeight    = 40
+maxHeight    = 100
+minHeight    = 20
 
-maxWidth     = 0.03
-minWidth     = 0.022
+maxWidth     = 0.06
+#minWidth     = 0.022
+minWidth     = 0.09
 
 stepsN       = (maxHeight - minHeight)
 stepsWidth   = (maxWidth - minWidth) / stepsN
@@ -54,7 +55,6 @@ draw = !->
   loadPixels!
 
   i0 = 0
-  i1 = stepsN
 
   for i from minHeight to maxHeight
     tempWidth = count
@@ -73,7 +73,7 @@ draw = !->
 
     i0++
 
-  count += 0.04
+  count += 0.08
 
 
   updatePixels!

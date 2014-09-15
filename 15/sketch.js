@@ -2,13 +2,13 @@
 var canvasWidth, canvasHeight, canvasMargin, halfWidth, halfHeight, maxHeight, minHeight, maxWidth, minWidth, stepsN, stepsWidth, colorRange, colorInc, count, setPixel, setup, draw, keyPressed, mousePressed;
 canvasWidth = 400;
 canvasHeight = 200;
-canvasMargin = 50;
+canvasMargin = 40;
 halfWidth = canvasWidth * 0.5;
 halfHeight = canvasHeight * 0.5;
-maxHeight = 80;
-minHeight = 40;
-maxWidth = 0.03;
-minWidth = 0.022;
+maxHeight = 100;
+minHeight = 20;
+maxWidth = 0.06;
+minWidth = 0.09;
 stepsN = maxHeight - minHeight;
 stepsWidth = (maxWidth - minWidth) / stepsN;
 colorRange = 255;
@@ -27,12 +27,11 @@ setup = function(){
   createCanvas(canvasWidth, canvasHeight);
 };
 draw = function(){
-  var currWidthInc, i0, i1, i$, to$, i, tempWidth, color, j$, to1$, x, yOffset, y, k$, k;
+  var currWidthInc, i0, i$, to$, i, tempWidth, color, j$, to1$, x, yOffset, y, k$, k;
   background(0);
   currWidthInc = minWidth;
   loadPixels();
   i0 = 0;
-  i1 = stepsN;
   for (i$ = minHeight, to$ = maxHeight; i$ <= to$; ++i$) {
     i = i$;
     tempWidth = count;
@@ -50,7 +49,7 @@ draw = function(){
     }
     i0++;
   }
-  count += 0.04;
+  count += 0.08;
   updatePixels();
 };
 keyPressed = mousePressed = function(){
