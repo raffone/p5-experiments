@@ -3,7 +3,8 @@ let p = 5
 let w = (1080 / 2) / p
 let h = (1920 / 2) / p
 let r = 360
-
+let concurrentPoints = 50
+let hueIncrement = 3
 
 
 let currentHue = 0
@@ -17,25 +18,33 @@ let direction = [
 // let startingPoint = [p * w / 2, p * h / 2]
 
 
-let allPoints = []
+let allPoints = {}
 for (let i = 0; i < w; i++) {
   for (let j = 0; j < h; j++) {
     let point = [i * p, j * p]
     let pointString = `${point[0]}-${point[1]}`
-    allPoints.push(pointString)
+    // allPoints.push(pointString)
+    allPoints[pointString] = point
   }
 }
+
+console.log(allPoints);
+console.log(allPoints.length, w * h);
 
 
 // choose 4 random points
 function chooseRandomPoint() {
   // if all point is empty, return
-  if (allPoints.length === 0) {
+  if (Object.keys(allPoints).length === 0) {
+    console.log('FINISHED');
     return
   }
 
-  let randomPointString = allPoints[floor(random(allPoints.length))]
-  let randomPoint = randomPointString.split('-').map(Number)
+  // let randomPointString = allPoints[floor(random(Object.keys(allPoints).length))]
+  let randomPointString = random(Object.keys(allPoints))
+  let randomPoint = allPoints[randomPointString]
+
+  // console.log('yolo', randomPoint);
 
   // if (!allPoints.includes(randomPointString)) {
   //   return chooseRandomPoint()
@@ -43,10 +52,16 @@ function chooseRandomPoint() {
 
 
   // remove random point from the list of all points
-  let index = allPoints.indexOf(randomPointString)
-  allPoints.splice(index, 1)
+  delete allPoints[randomPointString]
+  
+  // let index = allPoints.indexOf(randomPointString)
+  // allPoints.splice(index, 1)
 
-  return randomPoint
+
+
+  let hue = 0
+
+  return [randomPoint, hue]
 }
 
 let currentPoints = []
@@ -67,11 +82,11 @@ function setup() {
   background(0);
 
 
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < concurrentPoints; i++) {
     let randomPoint = chooseRandomPoint()
     currentPoints.push(randomPoint)
   }
-  
+
   // draw a white square in th CENTER
   // fill(255);
   // rect(p * w / 2, p * h / 2, p, p);
@@ -89,21 +104,29 @@ function draw() {
 
   // for each current ppoint
   for (let i = 0; i < currentPoints.length; i++) {
-    let currentPoint = currentPoints[i]
+
+    // console.log('%csketch.js line:93 currentPoints[i]', 'color: #007acc;', currentPoints[i]);
+    let [currentPoint, hue] = currentPoints[i]
+    // console.log('%csketch.js line:107 currentPoint', 'color: #007acc;', currentPoint);
     let currentPointString = `${currentPoint[0]}-${currentPoint[1]}`
 
 
     // if yes, draw a square with currentHue
-    currentHue = (currentHue + 1) % r
+    let currentHue = (hue + hueIncrement) % r
     fill(currentHue, r, r)
     rect(currentPoint[0], currentPoint[1], p, p);
+
+    // increment point hue
+    currentPoints[i][1] = currentHue
 
     // points.push([...currentPoint, currentHue])
 
     // get index of current point
-    let index = allPoints.indexOf(currentPointString)
+    delete allPoints[currentPointString]
+
+    // let index = allPoints.indexOf(currentPointString)
     // remove current point from the list of all points
-    allPoints.splice(index, 1)
+    // allPoints.splice(index, 1)
 
 
     // find the next adiacent empty point in all for directions
@@ -111,38 +134,44 @@ function draw() {
     for (let i = 0; i < direction.length; i++) {
       let adiacentPoint = [currentPoint[0] + (direction[i][0] * p), currentPoint[1] + (direction[i][1] * p)]
       let adiacentPointString = `${adiacentPoint[0]}-${adiacentPoint[1]}`
-      if (allPoints.includes(adiacentPointString)) {
+      if (adiacentPointString in allPoints) {
         adiacentPoints.push(adiacentPointString)
       }
     }
 
-    if (adiacentPoints.length === 0) {
+    if (adiacentPoints.length !== 0) {
+
+
+      let randomAdiacentPointString = adiacentPoints[floor(random(adiacentPoints.length))]
+      let randomAdiacentPoint = randomAdiacentPointString.split('-').map(Number)
+      currentPoints[i] = [randomAdiacentPoint, currentHue]
+
+    } else {
+
       // console.log('no adiacent points');
       let randomPoint = chooseRandomPoint()
 
       // if random point is undefined remove current point from current points
       if (randomPoint === undefined) {
+        // remopve currentPoint
         currentPoints.splice(i, 1)
+      } else {
+
+        currentPoints[i] = randomPoint
       }
 
+      // // add all adiacentPoint to the list of current points
+      // for (let i = 0; i < adiacentPoints.length; i++) {
+      //   // let adiacentPointString = adiacentPoints[i]
+      //   let adiacentPoint = adiacentPoints[i]
+      //   currentPoints.push([...adiacentPoint, currentHue])
+      // }
 
-      currentPoints[i] = randomPoint
+
+      // // // choose an adiacent point at random
+
+
     }
-
-    // add all adiacentPoint to the list of current points
-    for (let i = 0; i < adiacentPoints.length; i++) {
-      let adiacentPointString = adiacentPoints[i]
-      let adiacentPoint = adiacentPointString.split('-').map(Number)
-      currentPoints.push(adiacentPoint)
-    }
-
-
-    // // choose an adiacent point at random
-    // let randomAdiacentPointString = adiacentPoints[floor(random(adiacentPoints.length))]
-    // let randomAdiacentPoint = randomAdiacentPointString.split('-').map(Number)
-
-    // // update current point
-    // currentPoints[i] = randomAdiacentPoint
 
 
     // currentPoint = randomAdiacentPoint
