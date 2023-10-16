@@ -182,7 +182,7 @@ function draw() {
       // }
 
       // randomize adiacentPoints and take between 1 and 4
-      let randomAdiacentPoints = shuffle(adiacentPoints).slice(0, floor(random(1, 4)))
+      let randomAdiacentPoints = shuffle(adiacentPoints).slice(0, floor(random(1, 3)))
       // let randomAdiacentPoints = adiacentPoints
 
 
