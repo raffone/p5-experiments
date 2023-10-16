@@ -4,7 +4,7 @@ let w = (1080 / 2) / p
 let h = (1920 / 2) / p
 let r = 360
 let concurrentPoints = 50
-let hueIncrement = 10
+let hueIncrement = 3
 let hueIncrementAnimation = 1
 
 
@@ -19,7 +19,7 @@ let direction = [
   [0, -1] // up
 ]
 
-let startingPoint = [p * w / 2, p * h / 2]
+// let startingPoint = [p * w / 2, p * h / 2]
 
 
 let allPoints = {}
@@ -57,7 +57,7 @@ function chooseRandomPoint() {
 
   // remove random point from the list of all points
   delete allPoints[randomPointString]
-
+  
   // let index = allPoints.indexOf(randomPointString)
   // allPoints.splice(index, 1)
 
@@ -72,7 +72,6 @@ let currentPoints = []
 
 
 let points = []
-let drawnPoints = []
 let finished = false
 
 function setup() {
@@ -88,16 +87,10 @@ function setup() {
   background(0);
 
 
-  // for (let i = 0; i < concurrentPoints; i++) {
-  //   let randomPoint = chooseRandomPoint()
-  //   currentPoints.push(randomPoint)
-  // }
-
-  // add the center point to the curren points
-  let startingPointString = `${startingPoint[0]}-${startingPoint[1]}`
-  console.log('%csketch.js line:98 startingPoint', 'color: #007acc;', startingPoint);
-  currentPoints.push([startingPoint, 0])
-
+  for (let i = 0; i < concurrentPoints; i++) {
+    let randomPoint = chooseRandomPoint()
+    currentPoints.push(randomPoint)
+  }
 
   // draw a white square in th CENTER
   // fill(255);
@@ -115,36 +108,28 @@ function draw() {
   // console.log('%csketch.js line:53 currentPoint', 'color: #007acc;', currentPoint);
 
   // for each current ppoint
-  // for (let i = 0; i < Object.keys(currentPoints).length; i++) {
   for (let i = 0; i < currentPoints.length; i++) {
-  // for (let currentPointKey in currentPoints) {
 
     // console.log('%csketch.js line:93 currentPoints[i]', 'color: #007acc;', currentPoints[i]);
-    // console.log('%csketch.js line:123 currentPoints', 'color: #007acc;', currentPoints);
-    // console.log('%csketch.js line:123 currentPoints[i]', 'color: #007acc;', currentPoints[i]);
     let [currentPoint, hue] = currentPoints[i]
-
-    // console.log('%csketch.js line:127 currentPoint', 'color: #007acc;', currentPoint);
     // console.log('%csketch.js line:107 currentPoint', 'color: #007acc;', currentPoint);
-    let currentPointKey = `${currentPoint[0]}-${currentPoint[1]}`
+    let currentPointString = `${currentPoint[0]}-${currentPoint[1]}`
+
 
     // if yes, draw a square with currentHue
     let currentHue = (hue + hueIncrement) % r
-    fill(currentHue, r, r)
-    rect(currentPoint[0], currentPoint[1], p, p);
+    // fill(currentHue, r, r)
+    // rect(currentPoint[0], currentPoint[1], p, p);
 
     // increment point hue
     currentPoints[i][1] = currentHue
 
-    // points.push([currentPoint, currentHue])
+    points.push([currentPoint, currentHue])
 
     // get index of current point
-    delete allPoints[currentPointKey]
-    // delete currentPoints[currentPointKey]
+    delete allPoints[currentPointString]
 
-    // console.log('%csketch.js line:140 allPoints.length', 'color: #007acc;', Object.keys(allPoints).length);
-
-    // let index = allPoints.indexOf(currentPointKey)
+    // let index = allPoints.indexOf(currentPointString)
     // remove current point from the list of all points
     // allPoints.splice(index, 1)
 
@@ -155,17 +140,16 @@ function draw() {
       let adiacentPoint = [currentPoint[0] + (direction[i][0] * p), currentPoint[1] + (direction[i][1] * p)]
       let adiacentPointString = `${adiacentPoint[0]}-${adiacentPoint[1]}`
       if (adiacentPointString in allPoints) {
-        // adiacentPoints.push(adiacentPointString)
-        adiacentPoints.push(adiacentPoint)
+        adiacentPoints.push(adiacentPointString)
       }
     }
 
     if (adiacentPoints.length !== 0) {
 
 
-      // let randomAdiacentPointKey = adiacentPoints[floor(random(adiacentPoints.length))]
-      // let randomAdiacentPoint = randomAdiacentPointKey.split('-').map(Number)
-      // currentPoints[i] = [randomAdiacentPoint, currentHue]
+      let randomAdiacentPointString = adiacentPoints[floor(random(adiacentPoints.length))]
+      let randomAdiacentPoint = randomAdiacentPointString.split('-').map(Number)
+      currentPoints[i] = [randomAdiacentPoint, currentHue]
 
 
       // select one or more adiacent points at random
@@ -173,43 +157,23 @@ function draw() {
       // let randomAdiacentPointsStrings = []
       // let numberOfAdiacentPoints = floor(random(1, adiacentPoints.length + 1))
       // for (let i = 0; i < numberOfAdiacentPoints; i++) {
-      //   let randomAdiacentPointKey = adiacentPoints[floor(random(adiacentPoints.length))]
-      //   let randomAdiacentPoint = randomAdiacentPointKey.split('-').map(Number)
+      //   let randomAdiacentPointString = adiacentPoints[floor(random(adiacentPoints.length))]
+      //   let randomAdiacentPoint = randomAdiacentPointString.split('-').map(Number)
       //   randomAdiacentPoints.push(randomAdiacentPoint)
-      //   randomAdiacentPointsStrings.push(randomAdiacentPointKey)
+      //   randomAdiacentPointsStrings.push(randomAdiacentPointString)
 
-
+       
       // }
 
-      // randomize adiacentPoints and take between 1 and 4
-      let randomAdiacentPoints = shuffle(adiacentPoints).slice(0, floor(random(1, 4)))
-      // let randomAdiacentPoints = adiacentPoints
-
-
-      // console.log('%csketch.js line:176 randomAdiacentPoints', 'color: #007acc;', randomAdiacentPoints);
-
-
-      // use the first adiacent point as current point
+      // // use the first adiacent point as current point
       // currentPoints[i] = [randomAdiacentPoints[0], currentHue]
 
-      let randomAdiacentPointKey = `${randomAdiacentPoints[0][0]}-${randomAdiacentPoints[0][1]}`
-      currentPoints[i] = [randomAdiacentPoints[0], currentHue]
-      delete allPoints[randomAdiacentPointKey]
-
-
-      // use the other adiacent points as new current points
-      for (let i = 1; i < randomAdiacentPoints.length; i++) {
-        // currentPoints.push([randomAdiacentPoints[i], currentHue])
-        let randomAdiacentPoint = randomAdiacentPoints[i]
-        let randomAdiacentPointKey = `${randomAdiacentPoints[i][0]}-${randomAdiacentPoints[i][1]}`
-        // currentPoints[randomAdiacentPointKey] = [randomAdiacentPoint, currentHue]
-        currentPoints.push([randomAdiacentPoint, currentHue])
-        delete allPoints[randomAdiacentPointKey]
-      }
+      // // use the other adiacent points as new current points
+      // for (let i = 1; i < randomAdiacentPoints.length; i++) {
+      //   currentPoints.push([randomAdiacentPoints[i], currentHue])
+      // }
 
     } else {
-
-      // console.log('YOLO?!');
 
       // console.log('no adiacent points');
       let randomPoint = chooseRandomPoint()
@@ -218,16 +182,9 @@ function draw() {
       if (randomPoint === undefined) {
         // remopve currentPoint
         currentPoints.splice(i, 1)
-          
       } else {
 
         currentPoints[i] = randomPoint
-
-        
-
-        // remove from current points array
-        // currentPoints.splice(i, 1)
-
       }
 
       // // add all adiacentPoint to the list of current points
@@ -245,36 +202,28 @@ function draw() {
 
 
     // currentPoint = randomAdiacentPoint
-    // currentPointKey = randomAdiacentPointKey
+    // currentPointString = randomAdiacentPointString
 
     // }
 
   }
 
-  // if (currentPoints.length === 0) {
-  //   finished = true
-  // }
+  if (currentPoints.length === 0) {
+    finished = true
+  }
 
-  // for (let i = 0; i < points.length; i++) {
-
-  //   let pointString = `${points[i][0][0]}-${points[i][0][1]}`
-  //   if (drawnPoints.includes(pointString)) {
-  //     continue
-  //   }
-
-  //   let point = points[i]
-  //   let hue = point[1]
-  //   fill(hue, r, r)
-  //   rect(point[0][0], point[0][1], p, p);
-
-  //   drawnPoints.push(pointString)
+  for (let i = 0; i < points.length; i++) {
+    let point = points[i]
+    let hue = point[1]
+    fill(hue, r, r)
+    rect(point[0][0], point[0][1], p, p);
 
 
-  //   // if finished increment point hue
-  //   // if (finished) {
-  //   //   point[1] = (point[1] + hueIncrementAnimation) % r
-  //   // }
-  // }
+    // if finished increment point hue
+    if (finished) {
+      point[1] = (point[1] + hueIncrementAnimation) % r
+    }
+  }
 
 
 
